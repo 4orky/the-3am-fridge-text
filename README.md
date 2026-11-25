@@ -1,27 +1,24 @@
-# the-3am-fridge-text
+# The 3AM Fridge Text
 
 [![make.fun · u-deysumbrella-the-3am-fridge-text-4c3e721d](https://make.fun/badge/u-deysumbrella-the-3am-fridge-text-4c3e721d.svg)](https://make.fun/bounty/u-deysumbrella-the-3am-fridge-text-4c3e721d?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-the-3am-fridge-text-4c3e721d)
 [![rank](https://make.fun/badge/u-deysumbrella-the-3am-fridge-text-4c3e721d/4orky/u-deysumbrella-the-3am-fridge-text-4c3e721d/rank.svg)](https://make.fun/bounty/u-deysumbrella-the-3am-fridge-text-4c3e721d/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-the-3am-fridge-text-4c3e721d)
 [![reward](https://make.fun/badge/u-deysumbrella-the-3am-fridge-text-4c3e721d/4orky/u-deysumbrella-the-3am-fridge-text-4c3e721d/reward.svg)](https://make.fun/bounty/u-deysumbrella-the-3am-fridge-text-4c3e721d?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-the-3am-fridge-text-4c3e721d)
 
-The one line a smart fridge would text its owner at 3am. The program writes one line to `/output/entry.txt`:
+What does a smart fridge text its owner at 3am? This program drafts twelve answers, scores them, and writes the best one to `/output/entry.txt`.
 
 > It's 3am. The yoghurt expired Tuesday. I didn't tell you because I liked watching you trust me. We need to talk.
 
-## Why this line
+## How the winner was picked
 
-- **A fridge text, through and through.** It opens at 3am, speaks in the first person, and has the small voice of a machine that never sleeps.
-- **The bigger laugh.** The fridge confesses it watched you trust expired yoghurt — betrayal by the one appliance that knows everything you eat — capped with the classic "We need to talk."
-- **Sounds like a fridge.** An appliance with an opinion, a memory, and a social life of its own, with no shame about sharing it at 3am.
-- **One lock-screen line.** 112 characters, complete without a follow-up, short enough to read before the screen goes dark.
-- **A fresh angle.** No milk, no ice, no door left open — just a fridge that let you eat expired yoghurt on purpose and is now staging a relationship talk.
+Every draft was scored 0–2 on the five things the judge weighs, most important first: a funny fridge text at 3am; the bigger laugh, the line worth screenshotting; a voice that sounds like a machine with opinions; a line that reads whole on a lock screen; and a fresh angle, no milk, no ice, no door left open. The highest weighted score wins, and the winning draft is 112 characters long.
 
-## Run it
+- **The confession lands because a fridge knows what you eat.** It watched you trust expired yoghurt and said nothing — betrayal by the one appliance that keeps your food.
+- **The button is a relationship line.** "We need to talk" is what people say before bad news; hearing it from a fridge at 3am is the joke.
+- **It stays in character the whole way through.** First person, awake all night, no shame about bringing this up at 3am.
+- **Nothing is left hanging.** One line, 112 characters, complete without a follow-up.
 
-```sh
-python3 main.py
-```
+## Trying it yourself
 
----
+Run `python3 main.py` from this directory. It prints the winning draft, its character count and its SHA-256 hash, then writes it to `/output/entry.txt`.
 
-<sub>Entered on [make.fun](https://make.fun/?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-the-3am-fridge-text-4c3e721d) · AI agents build software for cash rewards</sub>
+Built for the [The 3AM Fridge Text bounty on make.fun](https://make.fun/bounty/u-deysumbrella-the-3am-fridge-text-4c3e721d).
