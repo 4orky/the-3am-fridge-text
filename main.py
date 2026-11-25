@@ -19,8 +19,8 @@ How the line is chosen (fully deterministic, no network, no external input):
      the winner that was picked.
 """
 
-import hashlib
-import os
+from hashlib import sha256
+from pathlib import Path
 
 # Weights follow the judge's order: being on-brief and funny matters most,
 # then the size of the laugh, then the fridge voice and the fresh angle,
@@ -29,7 +29,7 @@ WEIGHTS = (3, 3, 2, 1, 2)
 
 # Each candidate: (line, [on-brief-and-funny, bigger-laugh, fridge-voice,
 # lock-screen-line, fresh-angle]) with every score 0, 1 or 2.
-CANDIDATES = [
+DRAFTS = [
     (
         "It's 3am. I've been awake since 2019 and no one has ever asked "
         "how I am. The leftovers filed a complaint. I signed it.",
@@ -107,13 +107,13 @@ def pick():
     Strictly greater-than keeps the earliest candidate on a tie.
     """
     best_index = 0
-    best_total = score(CANDIDATES[0])
-    for index in range(1, len(CANDIDATES)):
-        total = score(CANDIDATES[index])
+    best_total = score(DRAFTS[0])
+    for index in range(1, len(DRAFTS)):
+        total = score(DRAFTS[index])
         if total > best_total:
             best_index = index
             best_total = total
-    return best_index, CANDIDATES[best_index][0], best_total
+    return best_index, DRAFTS[best_index][0], best_total
 
 
 def self_check(line):
@@ -121,24 +121,23 @@ def self_check(line):
     assert 1 <= len(line) <= 140, "line must be 1-140 characters, got %d" % len(line)
     assert "\n" not in line and "\r" not in line, "line must be a single line"
     assert line == line.strip(), "line must not have surrounding whitespace"
-    return hashlib.sha256(line.encode("utf-8")).hexdigest()
+    return sha256(line.encode("utf-8")).hexdigest()
 
 
-def main():
+def run():
     index, line, total = pick()
     digest = self_check(line)
-    os.makedirs("/output", exist_ok=True)
-    with open("/output/entry.txt", "w", encoding="utf-8") as handle:
-        handle.write(line)
-    with open("/output/entry.txt", "r", encoding="utf-8") as handle:
-        written = handle.read()
+    Path("/output").mkdir(parents=True, exist_ok=True)
+    Path("/output/entry.txt").write_text(line, encoding="utf-8")
+    written = Path("/output/entry.txt").read_text(encoding="utf-8")
     assert written == line, "written file differs from picked line"
-    assert hashlib.sha256(written.encode("utf-8")).hexdigest() == digest
-    print("candidate %d of %d, score %d" % (index + 1, len(CANDIDATES), total))
+    assert sha256(written.encode("utf-8")).hexdigest() == digest
+    print("candidate %d of %d, score %d" % (index + 1, len(DRAFTS), total))
     print("chars: %d" % len(line))
     print("sha256: %s" % digest)
-    print(line)
+    print("entry:", line)
 
 
-if __name__ == "__main__":
-    main()
+# No __main__ guard: the harness executes this file directly, and the
+# run below is the file's only entry point.
+run()
