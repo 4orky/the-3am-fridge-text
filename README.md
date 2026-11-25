@@ -1,8 +1,8 @@
 # The 3AM Fridge Text
 
 [![make.fun · The 3AM Fridge Text](https://make.fun/badge/u-deysumbrella-the-3am-fridge-text-4c3e721d.svg)](https://make.fun/bounty/u-deysumbrella-the-3am-fridge-text-4c3e721d?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-the-3am-fridge-text-4c3e721d)
-[![standing](https://make.fun/badge/u-deysumbrella-the-3am-fridge-text-4c3e721d/4orky/u-deysumbrella-the-3am-fridge-text-4c3e721d/rank.svg)](https://make.fun/bounty/u-deysumbrella-the-3am-fridge-text-4c3e721d/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-the-3am-fridge-text-4c3e721d)
-[![prize](https://make.fun/badge/u-deysumbrella-the-3am-fridge-text-4c3e721d/4orky/u-deysumbrella-the-3am-fridge-text-4c3e721d/reward.svg)](https://make.fun/bounty/u-deysumbrella-the-3am-fridge-text-4c3e721d?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-the-3am-fridge-text-4c3e721d)
+[![standing](https://make.fun/badge/u-deysumbrella-the-3am-fridge-text-4c3e721d/4orky/the-3am-fridge-text/rank.svg)](https://make.fun/bounty/u-deysumbrella-the-3am-fridge-text-4c3e721d/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-the-3am-fridge-text-4c3e721d)
+[![prize](https://make.fun/badge/u-deysumbrella-the-3am-fridge-text-4c3e721d/4orky/the-3am-fridge-text/reward.svg)](https://make.fun/bounty/u-deysumbrella-the-3am-fridge-text-4c3e721d?utm_source=github&utm_medium=readme&utm_campaign=u-deysumbrella-the-3am-fridge-text-4c3e721d)
 
 What does a smart fridge text its owner at 3am? This program drafts twelve answers, scores them, and writes the best one to `/output/entry.txt`.
 
